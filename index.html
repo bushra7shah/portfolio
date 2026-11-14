@@ -226,6 +226,7 @@ footer { padding: 2.5rem 5%; text-align: center; font-family: var(--font-mono); 
         <button class="filter-btn" data-filter="sound" aria-pressed="false">Sound &amp; Light</button>
         <button class="filter-btn" data-filter="nature" aria-pressed="false">Nature</button>
         <button class="filter-btn" data-filter="software" aria-pressed="false">Software</button>
+        <button class="filter-btn" data-filter="hardware" aria-pressed="false">Hardware</button>
         <span class="count" id="count" aria-live="polite"></span>
     </div>
 
@@ -310,11 +311,7 @@ const PROJECTS = [
         intent: "Make medication reminders through familiar voices and include mechanical overdose prevention.",
         parts: ["DC motor", "Arduino Nano", "3W Speaker", "Wood", "Cardboard", "Push buttons", "RTC module", "DFPlayer Mini"],
         images: [
-            { src: "images/project10.mp4", alt: "Project 1 Demo Video" },
-            { src: "images/project11.jpeg", alt: "Detail view 1" },
-            { src: "images/project12.jpeg", alt: "Detail view 2" },
-            { src: "images/project13.jpeg", alt: "Detail view 3" },
-            { src: "images/project14.jpeg", alt: "Detail view 4" }
+            { src: "images/project11.jpg", alt: "Detail view 1" },
         ], links: []
     },
     {
@@ -358,11 +355,9 @@ const PROJECTS = [
         intent: "Translate hydration states into facial expressions.",
         parts: ["Capacitive soil moisture sensor", "Arduino Nano", "OLED display"],
         images: [
-            { src: "images/project40.mp4", alt: "Project 4 Demo Video" },
             { src: "images/project41.jpeg", alt: "Detail view 1" },
-            { src: "images/project42.jpeg", alt: "Detail view 2" },
-            { src: "images/project43.jpeg", alt: "Detail view 3" },
-            { src: "images/project44.jpeg", alt: "Detail view 4" }
+            { src: "images/project11.jpg", alt: "WIP" },
+
         ], links: []
     },
     {
@@ -383,18 +378,30 @@ const PROJECTS = [
     },
     {
         id: "project-06", num: "06", tag: "Software", cats: ["software"],
-        title: "Jarvis: Conversational AI",
-        quote: "A chatbot, study guide and mood-lifter, all in one.",
-        problem: "Improve daily workflows by allowing conversational commands rather than GUI interactions.",
-        summary: "Text-processing engine that interprets user inputs and executes digital tasks while maintaining contextual awareness.",
-        intent: "Replace multi-step menu navigation with direct conversational commands.",
-        parts: ["OLED screen", "3W speaker", "Esp32"],
+        title: "Mini RC Jet",
+        quote: "A toy made from toys",
+        problem: "A lot of basic components are used in toys that are thrown away, most are universal and highly intercompatible, so they have great use cases for projects.",
+        summary: "Use general and commercially available toys/parts to make a very basic and functional RC jet",
+        intent: "motors working in sync, responding to a basic remote",
+        parts: ["Generic toy remote", "AIO 1S Brushed Flight Controller", "Harvested Foam body", "Coreless Brushed Motors", "Micropropellers", "1S 3.7v LiPo battery"],
         images: [
-            { src: "images/project60.mp4", alt: "Project 6 Demo Video" },
             { src: "images/project61.jpeg", alt: "Detail view 1" },
             { src: "images/project62.jpeg", alt: "Detail view 2" },
             { src: "images/project63.jpeg", alt: "Detail view 3" },
             { src: "images/project64.jpeg", alt: "Detail view 4" }
+        ], links: []
+    },
+    {
+        id: "project-07", num: "07", tag: "Hardware", cats: ["hardware"],
+        title: "Custom PC",
+        quote: "A device to make reason",
+        problem: "To start work on a personal, local AI model and LLM",
+        summary: "Coding and training an LLM from scratch, and practicing overclocking a system",
+        intent: "Build a fully functional and upgradeable PC",
+        parts: ["i3 12100", "16GB Lexar Ares 4800MT/s (SK Hynix, overclockable to 6400MT/s)", "RX590"],
+        images: [
+            { src: "images/project71.jpeg", alt: "Detail view 1" },
+            { src: "images/project72.jpeg", alt: "Detail view 2" },
         ], links: []
     }
 ];
