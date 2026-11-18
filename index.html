@@ -301,21 +301,11 @@ footer { padding: 2.5rem 5%; text-align: center; font-family: var(--font-mono); 
 <script>
 // The logic automatically detects .mp4 extensions and routes them to a video player
 // and defaults cleanly to the placeholder layout if the files are not uploaded yet.
+// Set `hidden: true` on a project to keep it out of the grid, the counters,
+// the filter results, the prev/next pager and the URL deep links.
 const PROJECTS = [
     {
-        id: "project-01", num: "01", tag: "Medicine", cats: ["assistive"],
-        title: "Smart Medication Dispenser",
-        quote: "The best reminder for medicine is through the voice of a loved one.",
-        problem: "People with Alzheimer's suffer from accidental medication overdoses and get disoriented with clinical alarms.",
-        summary: "A motorized rotating disc housing one pill per section. Plays a recorded audio message at scheduled intervals. Dispenses one pill upon button press, then disables rotation function for the rest of the day, to prevent unscheduled doses.",
-        intent: "Make medication reminders through familiar voices and include mechanical overdose prevention.",
-        parts: ["DC motor", "Arduino Nano", "3W Speaker", "Wood", "Cardboard", "Push buttons", "RTC module", "DFPlayer Mini"],
-        images: [
-            { src: "images/project11.jpg", alt: "Detail view 1" },
-        ], links: []
-    },
-    {
-        id: "project-02", num: "02", tag: "Music", cats: ["assistive", "sound"],
+        id: "project-01", num: "01", tag: "Music", cats: ["assistive", "sound"],
         title: "Kinetic Air Harp",
         quote: "Easy musical expression for individuals without fine motor control.",
         problem: "Playing consistent notes on any instrument is difficult for individuals with frail hands, severe tremors, or involuntary movements.",
@@ -331,7 +321,7 @@ const PROJECTS = [
         ], links: []
     },
     {
-        id: "project-03", num: "03", tag: "Visualizer", cats: ["sound"],
+        id: "project-02", num: "02", tag: "Visualizer", cats: ["sound"],
         title: "Music Reactive Light Bar",
         quote: "Ambient acoustics turn into a canvas of light.",
         problem: "One color can't represent all moods, so why stick to one color?",
@@ -347,21 +337,7 @@ const PROJECTS = [
         ], links: []
     },
     {
-        id: "project-04", num: "04", tag: "Nature", cats: ["nature"],
-        title: "The Mood Plant",
-        quote: "It's easier to understand what a plant wants when it communicates.",
-        problem: "It's hard to visually understand the water content in a plant pot, finding a way to represent the level of water content makes their management significantly easier.",
-        summary: "A soil moisture sensor sends analog data to a microcontroller. Software maps moisture levels to facial expressions on an OLED display (thriving/happy when watered; distressed/sad when dry).",
-        intent: "Translate hydration states into facial expressions.",
-        parts: ["Capacitive soil moisture sensor", "Arduino Nano", "OLED display"],
-        images: [
-            { src: "images/project41.jpeg", alt: "Detail view 1" },
-            { src: "images/project11.jpg", alt: "WIP" },
-
-        ], links: []
-    },
-    {
-        id: "project-05", num: "05", tag: "Civic", cats: ["assistive"],
+        id: "project-03", num: "03", tag: "Civic", cats: ["assistive"],
         title: "Civic Rights Audio Kiosk",
         quote: "An empowerment tool built for legal and civic environments.",
         problem: "Not all women know how to deal with the police well or are aware of their rights. In legal situations some also lack the knowledge of how to make their case stronger.",
@@ -377,7 +353,7 @@ const PROJECTS = [
         ], links: []
     },
     {
-        id: "project-06", num: "06", tag: "Software", cats: ["software"],
+        id: "project-04", num: "04", tag: "Software", cats: ["software"],
         title: "Mini RC Jet",
         quote: "A toy made from toys",
         problem: "A lot of basic components are used in toys that are thrown away, most are universal and highly intercompatible, so they have great use cases for projects.",
@@ -392,7 +368,7 @@ const PROJECTS = [
         ], links: []
     },
     {
-        id: "project-07", num: "07", tag: "Hardware", cats: ["hardware"],
+        id: "project-05", num: "05", tag: "Hardware", cats: ["hardware"],
         title: "Custom PC",
         quote: "A device to make reason",
         problem: "To start work on a personal, local AI model and LLM",
@@ -403,6 +379,66 @@ const PROJECTS = [
             { src: "images/project71.jpeg", alt: "Detail view 1" },
             { src: "images/project72.jpeg", alt: "Detail view 2" },
         ], links: []
+    },
+    {
+        id: "project-06", num: "06", tag: "Audio", cats: ["sound", "hardware"],
+        title: "Type-C Wireless Speaker",
+        quote: "One port is all a speaker should need.",
+        problem: "Laptop speakers are usually thrown out with the laptop still attached to them, even when the drivers and the amplifier are the only parts that ever mattered.",
+        summary: "Harvested laptop drivers driven by a small amplifier board, running off a single Type-C port for power and charging. A boost module and a charge module sit between the port and the battery so the amplifier gets the voltage it expects.",
+        intent: "Give a discarded laptop's audio hardware a second life in a one-cable build.",
+        parts: ["Harvested laptop speakers", "Amplifier board", "Type-C charge module", "Boost converter", "Li-ion cell", "Switch", "Salvaged enclosure"],
+        images: [
+            { src: "images/project11.jpg", alt: "Work in progress", caption: "Work in progress." }
+        ], links: []
+    },
+    {
+        id: "project-07", num: "07", tag: "Audio", cats: ["sound", "hardware"],
+        title: "Type-C Wireless Microphone",
+        quote: "A microphone should charge like a phone and fit in a pocket.",
+        problem: "Working microphone capsules end up in the bin with the laptops and headsets they were soldered into, and replacing one means buying the whole assembly again.",
+        summary: "Harvested electret capsule with a small preamp, feeding a wireless transmitter that pairs with a receiver on the other end. Charged over Type-C, with a trim pot on the gain so it goes straight into a laptop or a speaker.",
+        intent: "Turn a discarded capsule into a wireless microphone that only needs one cable to charge.",
+        parts: ["Harvested electret capsule", "Preamp board", "Wireless audio transmitter and receiver", "Type-C charge module", "Li-ion cell", "Enclosure"],
+        images: [
+            { src: "images/project11.jpg", alt: "Work in progress", caption: "Work in progress." }
+        ], links: []
+    },
+    {
+        id: "project-08", num: "08", tag: "Medicine", cats: ["assistive"], hidden: true,
+        title: "Smart Medication Dispenser",
+        quote: "The best reminder for medicine is through the voice of a loved one.",
+        problem: "People with Alzheimer's suffer from accidental medication overdoses and get disoriented with clinical alarms.",
+        summary: "A motorized rotating disc housing one pill per section. Plays a recorded audio message at scheduled intervals. Dispenses one pill upon button press, then disables rotation function for the rest of the day, to prevent unscheduled doses.",
+        intent: "Make medication reminders through familiar voices and include mechanical overdose prevention.",
+        parts: ["DC motor", "Arduino Nano", "3W Speaker", "Wood", "Cardboard", "Push buttons", "RTC module", "DFPlayer Mini"],
+        images: [
+            { src: "images/project11.jpg", alt: "Work in progress", caption: "Work in progress." }
+        ], links: []
+    },
+    {
+        id: "project-09", num: "09", tag: "Assistant", cats: ["software", "assistive"], hidden: true,
+        title: "Jarvis",
+        quote: "A computer should answer to a voice, not to a menu.",
+        problem: "Useful things on a computer are buried under windows and menus, and getting a reminder, a note or a calculation done takes more steps than it should.",
+        summary: "A chatbot built to take voice or text input and carry out local tasks: reminders, notes, calculations and system commands. Speech recognition and synthesis handle the conversation, and the answer comes back out loud.",
+        intent: "Handle everyday tasks through a conversation instead of a menu.",
+        parts: ["Python", "Speech recognition", "Text-to-speech", "Local LLM", "Custom PC"],
+        images: [
+            { src: "images/project11.jpg", alt: "Work in progress", caption: "Work in progress." }
+        ], links: []
+    },
+    {
+        id: "project-10", num: "10", tag: "Nature", cats: ["nature"], hidden: true,
+        title: "The Mood Plant",
+        quote: "It's easier to understand what a plant wants when it communicates.",
+        problem: "It's hard to visually understand the water content in a plant pot, finding a way to represent the level of water content makes their management significantly easier.",
+        summary: "A soil moisture sensor sends analog data to a microcontroller. Software maps moisture levels to facial expressions on an OLED display (thriving/happy when watered; distressed/sad when dry).",
+        intent: "Translate hydration states into facial expressions.",
+        parts: ["Capacitive soil moisture sensor", "Arduino Nano", "OLED display"],
+        images: [
+            { src: "images/project11.jpg", alt: "Work in progress", caption: "Work in progress." }
+        ], links: []
     }
 ];
 
@@ -411,7 +447,7 @@ const grid = $("#grid"), modal = $("#modal"), panel = $("#panel"), countEl = $("
 let filter = "all", currentId = null, shot = 0, lastFocus = null;
 
 const isVideo = src => src.endsWith('.mp4');
-const visible = () => PROJECTS.filter(p => filter === "all" || p.cats.includes(filter));
+const shown = () => PROJECTS.filter(p => !p.hidden && (filter === "all" || p.cats.includes(filter)));
 const byId = id => PROJECTS.find(p => p.id === id);
 const placeholder = p => `<span class="ph" aria-hidden="true">${p.num}<small>${p.tag}</small></span>`;
 
@@ -444,7 +480,7 @@ grid.innerHTML = PROJECTS.map((p, i) => {
 function applyFilter(f) {
     filter = f;
     document.querySelectorAll(".filter-btn").forEach(b => b.setAttribute("aria-pressed", b.dataset.filter === f));
-    const ids = visible().map(p => p.id);
+    const ids = shown().map(p => p.id);
     grid.querySelectorAll("li").forEach(li => { li.hidden = !ids.includes(li.dataset.id); });
     countEl.textContent = `Showing ${ids.length} of ${PROJECTS.length}`;
 }
@@ -452,7 +488,7 @@ $("#filters").addEventListener("click", e => { const b = e.target.closest(".filt
 grid.addEventListener("click", e => { const li = e.target.closest("li"); if (li) openProject(li.dataset.id); });
 
 function render(p) {
-    const list = visible(), i = list.findIndex(x => x.id === p.id);
+    const list = shown(), i = list.findIndex(x => x.id === p.id);
     const prev = list[(i - 1 + list.length) % list.length], next = list[(i + 1) % list.length];
     const multi = p.images.length > 1;
     panel.innerHTML = `
@@ -483,7 +519,7 @@ function render(p) {
 }
 
 function openProject(id, keepFocus) {
-    const p = byId(id); if (!p) return;
+    const p = byId(id); if (!p || p.hidden) return;
     if (!modal.classList.contains("open")) lastFocus = document.activeElement;
     currentId = id; shot = 0; render(p);
     modal.classList.add("open"); document.body.classList.add("locked");
@@ -519,14 +555,17 @@ document.addEventListener("keydown", e => {
         else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     }
     if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-        const list = visible(), i = list.findIndex(x => x.id === currentId);
+        const list = shown(), i = list.findIndex(x => x.id === currentId);
         const d = e.key === "ArrowRight" ? 1 : -1;
         openProject(list[(i + d + list.length) % list.length].id, true);
     }
 });
 
-function fromHash() { const h = location.hash.slice(1); if (byId(h)) { applyFilter("all"); openProject(h); } }
-window.addEventListener("hashchange", () => { if (byId(location.hash.slice(1)) && location.hash.slice(1) !== currentId) fromHash(); });
+function fromHash() {
+    const h = location.hash.slice(1), p = byId(h);
+    if (p && !p.hidden) { applyFilter("all"); openProject(h); }
+}
+window.addEventListener("hashchange", () => { if (location.hash.slice(1) !== currentId) fromHash(); });
 
 const io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } }),
     { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
